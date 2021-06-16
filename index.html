@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOW</title>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<style>
+html, body {
+background-color: #fff;
+color: #636b6f;
+font-family: 'Nunito', sans-serif;
+font-weight: 100;
+height: 100vh;
+margin: 0;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.full-height {
+height: 100vh;
+}
+.flex-center {
+align-items: center;
+display: flex;
+justify-content: center;
+}
+.position-ref {
+position: relative;
+}
+.jm {
+border-right: 2px solid;
+font-size: 22px;
+padding: 0 7px;
+text-align: center;
+}
+.tgl {
+font-size: 22px;
+padding: 0 7px;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+<div id="jam" class="jm">
+</div>
+<div id="hari" class="tgl"></div>
+</div>
+<script>
+window.setTimeout("now()", 10);
+function now() {
+var now = new Date();
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+setTimeout("now()", 10);
+document.getElementById("jam").innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + ":" + now.getMilliseconds();
+document.getElementById("hari").innerHTML = days[now.getDay()] + ", "  + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();}
+</script>
+</body>
+</html>
