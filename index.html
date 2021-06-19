@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 </head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no">
 <title>NOW</title>
 <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <style>
 html, body {
 background-color: #fff;
-color: #636b6f;
+color: #808080;
 font-family: 'Nunito', sans-serif;
 font-weight: 100;
 height: 100vh;
@@ -43,14 +44,18 @@ font-size: 22px;
 padding: 0 7px;
 text-align: center;
 }
+.dm {
+background-color: #000;
+color: #808080;
+}
 </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-<div id="jam" class="jm">
-</div>
-<div id="hari" class="tgl"></div>
-</div>
+<div class="flex-center position-ref full-height" onclick="change()">
+<div id="jam" class="jm"></div><div id="hari" class="tgl"></div></div>
+<script>
+alert("click anywhere to change light/dark mode");
+</script>
 <script>
 window.setTimeout("now()", 10);
 function now() {
@@ -60,6 +65,11 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 setTimeout("now()", 10);
 document.getElementById("jam").innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + ":" + now.getMilliseconds();
 document.getElementById("hari").innerHTML = days[now.getDay()] + ", "  + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();}
+</script>
+<script>
+function change() {
+var bd = document.body;
+bd.classList.toggle("dm");}
 </script>
 </body>
 </html>
