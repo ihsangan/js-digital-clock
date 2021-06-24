@@ -54,9 +54,6 @@ color: #808080;
 <div class="flex-center position-ref full-height" onclick="change()">
 <div id="jam" class="jm"></div><div id="hari" class="tgl"></div></div>
 <script>
-alert("click anywhere to change light/dark mode");
-</script>
-<script>
 window.setTimeout("now()", 10);
 function now() {
 var now = new Date();
@@ -67,6 +64,7 @@ document.getElementById("jam").innerHTML = now.getHours() + ":" + now.getMinutes
 document.getElementById("hari").innerHTML = days[now.getDay()] + ", "  + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear();}
 </script>
 <script>
+alert("click anywhere to change light/dark mode");
 function change() {
 var bd = document.body;
 bd.classList.toggle("dm");}
